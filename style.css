@@ -1,71 +1,101 @@
 html {
-
+    margin: 0;
 }
+
 body {
-    background-color: #131815;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-
+background: linear-gradient(35deg ,#00BCB4, #C4E86B);
+background-attachment: fixed;
+background-repeat: no-repeat;
 }
 
 .wrapper {
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 75px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
-
-.header{
-    text-align: center;
-    background: linear-gradient(20deg ,#00BCB4, #C4E86B);
-    border-color: #00BCB4;
-    border-radius: 25px;
-    padding-top: 20px;
-    padding-bottom: 80px;
-    line-height: 16pt;
+.navigation {
+    width: 100%;
+    height:3.5rem;
+    display: flex;
+    background-color: #292929;
+    justify-content: space-between;
+    box-shadow: 0.25rem 0.25rem #141414;
 }
 
-.gradientText {
-    background-image: linear-gradient(20deg ,#242424, #555555);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.header img {
-    border-radius: 100%;
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 256px;
-    max-height: 256px;
+.navigation img {
+    float: left;
     display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    margin-left: 0.4rem;
+    padding: 0%;
 }
 
-#buttons li {
+#navButtons li {
     float: left;
     list-style: none;
     text-align: center;
-    background-color: #3c8d88;
-    margin-right: 30px;
-    width: 150px;
-    line-height: 60px;
-    border-radius: 25px;
+    width: fit-content;
+    line-height: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 0.3rem;
 }
 
-#buttons li a {
+#navButtons li a {
     display: block;
+    color: #ffffff;
     text-decoration: none;
-    color: #08ccc2;
-    font-size: 20pt;
 }
 
-#buttons li a:hover {
+#navButtons li a:hover {
+    color: #C4E86B;
+    transition: 0.2s;
+}
+
+.main {
+    margin: 0;
+    line-height: 0.1rem;
+    margin-top: 10rem;
+    margin-left: 6rem;
+}
+
+.main h2 {
+    font-size: 4rem;
+}
+
+.main h1 {
+    font-size: 6rem;
+}
+
+.main h3 {
+    font-size: 3rem;
+}
+
+.main p {
+    line-height: 4rem;
+    margin-left: 1rem;
+    border-radius: .26rem;
+    width: 7.7rem;
+    background-color: #141414;
+}
+
+.main p a {
+    border-radius: .26rem;
+    background-color: #b2d45c;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    text-decoration: none;
     color: #fff;
-    font-size: 21pt;
-    background-color: #205f63;
-    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.main p a:hover {
+    border-radius: .26rem;
+    background-color: #00bc74;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.75s;
 }
