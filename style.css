@@ -1,20 +1,47 @@
 html {
     background-color: #FAF9F9;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    
 }
 
 body {
-    font-family: 'Poppins';
-    display: flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 100px;
+    margin: 0;
     color: #555B6E;
 }
 
-header {
-    display: block;
-    margin-bottom: 50em;
+section {
+ min-height: 100vh;
+ font-family: 'Poppins';
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+section:nth-child(1) {
+    background-color: #F5F0ED;
+    flex-direction: column;
+    text-align: center;
+}
+
+section:nth-child(1) svg {
+    margin-top: 100px;
+    width: 40px;
+    height: 40px;
+    fill: #555B6E;
+    transition: opacity 0.2s ease 0s;
+
+
+}
+
+section:nth-child(1) svg:hover {
+    opacity: 0.7;
+
 }
 
 a {
@@ -28,9 +55,13 @@ a {
 
 #socialButtons {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
 }
 
 .fa {
+    
     padding: 5px;
     font-size: 30px;
     width: 30px;
@@ -41,6 +72,7 @@ a {
     margin: 10px;
     display: inline;
     float: left;
+
 }
 
 .fa:hover {
@@ -62,6 +94,37 @@ a {
     color: white;;
 }
 
+section:nth-child(2) {
+    flex-direction: column;
+    background-color: #BEE3DB;
+    position: relative;
+}
+
+section:nth-child(2) ul {
+
+}
+
 #projectButtons {
     list-style: none;
+    margin: 0 auto;
+}
+
+#projectButtons li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cards a {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 150px;
+    max-height: 150px;
+    background-image: url("https://dummyimage.com/200x150.png");
+    display:block;
+    position: relative;
+}
+
+.cards p {
+    position: absolute;
+    top: 0px;
 }
