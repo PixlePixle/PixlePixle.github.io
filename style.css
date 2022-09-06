@@ -130,6 +130,10 @@ section:nth-child(2) ul {
     background-image: url("websitescreenshot.png");
 }
 
+.cards #minesweeper {
+    background-image: url("minesweeper.png");
+}
+
 .cards p {
     margin: 0;
     position: absolute;
