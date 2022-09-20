@@ -1,5 +1,11 @@
-html {
-    background-color: #FAF9F9;
+body {
+    background-color: #121212;
+    color: #ffffff;
+    opacity: 86%;
+    margin: 0;
+    font-family: 'Poppins';
+}
+html {   
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     scroll-behavior: smooth;
@@ -7,48 +13,144 @@ html {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.section {
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    line-height: 1.4em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 100vw;
+    min-height: 100vh;
+
+}
+
+.section:nth-child(1) {
+    min-height: 100vh; /* Set to 103vh for triangle */
+}
+
+.section:nth-child(2) {
+    background-color: #121212;
+}
+
+.text {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.text h1 {
+    font-size: 2em;
+}
+
+.text p {
+    font-size: 1em;
+}
+
+.buttons {
+    flex-direction: row;
+}
+
+.button {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #121212;
+    color: #ffffff;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #4CAF50, yellow) 1;
+    padding: 15px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 7px;
+}
+
+.cards {
+    margin-left: 10vh;
+    margin-right: 10vh;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
-body {
+.card {
+    justify-content: center;
+    align-items: center;
+    translate: 0px;
+    min-width: 200px;
+    min-height: 150px;
+    border-radius: 4%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://dummyimage.com/200x150.png");
+    margin: 10px;
+}
+
+.cards p {
     margin: 0;
-    color: #555B6E;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 200px;
+    height: 25px;
+    background-color: rgba(33, 36, 43, 0.7);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out 0s;
+    color: #F5F0ED;
 }
 
-section {
- min-height: 100vh;
- font-family: 'Poppins';
- display: flex;
- justify-content: center;
- align-items: center;
+.cards a:hover > p {
+    opacity: 1;
 }
 
-section:nth-child(1) {
-    background-color: #F5F0ED;
-    flex-direction: column;
-    text-align: center;
+.cards #website {
+    background-image: url(websitescreenshot.png);
 }
 
-section:nth-child(1) svg {
-    margin-top: 100px;
-    width: 40px;
-    height: 40px;
-    fill: #555B6E;
-    transition: opacity 0.2s ease 0s;
-
-
+.cards #minesweeper {
+    background-image: url(minesweeper.png);
 }
 
-section:nth-child(1) svg:hover {
-    opacity: 0.7;
-
+@media (max-width: 600px) {
+    .cards p {
+        opacity: 1;
+    }
+    .cards {
+        margin-left: 10vh;
+        margin-right: 10vh;
+        display: flex;
+        flex-wrap: nowrap;   
+        flex-direction: column;
+    }
+    
 }
 
-
-.cards {
-    display: flex;
-    flex-direction: row;
+.card:hover {
+    opacity: 80%;
 }
+
+/* Triangle, uncomment for use
+.section:nth-child(2)::before{
+    content: '';
+  display: block;
+  width: 0;
+  height: 0;
+position: absolute;
+  bottom: -3vh;
+    border-bottom: 3vh solid #121212; 
+  border-right: calc(100vw) solid transparent;
+}
+
+The border-bottom:3vh part is for the TRIANGLE
+*/
 
 #socialButtons {
     list-style: none;
@@ -58,7 +160,6 @@ section:nth-child(1) svg:hover {
 }
 
 .fa {
-    
     padding: 5px;
     font-size: 30px;
     width: 30px;
@@ -89,64 +190,4 @@ section:nth-child(1) svg:hover {
 .fa-envelope {
     background: #555b6e;
     color: white;;
-}
-
-section:nth-child(2) {
-    flex-direction: column;
-    background-color: #BEE3DB;
-    position: relative;
-}
-
-section:nth-child(2) ul {
-
-}
-
-
-
-#projectButtons {
-    list-style: none;
-    margin: 0 auto;
-}
-
-#projectButtons li {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.cards a {
-    min-width: 200px;
-    max-width: 200px;
-    min-height: 150px;
-    max-height: 150px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("https://dummyimage.com/200x150.png");
-    display:block;
-    position: relative;
-}
-
-.cards #website {
-    background-image: url("websitescreenshot.png");
-}
-
-.cards #minesweeper {
-    background-image: url("minesweeper.png");
-}
-
-.cards p {
-    margin: 0;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 200px;
-    height: 25px;
-    background-color: rgba(33, 36, 43, 0.6);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out 0s;
-    color: #F5F0ED;
-}
-
-.cards a:hover > p {
-    opacity: 1;
 }
