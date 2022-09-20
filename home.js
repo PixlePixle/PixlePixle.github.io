@@ -18,6 +18,7 @@ anime({
         {translateX: 0, opacity: [0,0.86], duration: 1250, delay: 1250}
 
     ],
+    delay: anime.stagger(50),
     duration: 0
 });
 
@@ -25,7 +26,7 @@ var Card = anime({
     targets: '.card',
     keyframes: [
         {opacity: 0},
-        {translateX: '-6', translateY: '0'},
+        {translateX: '0', translateY: '8'},
         {translateX: 0, translateY: 0, opacity: [0,1], duration: 500, easing: "easeInOutSine", delay: anime.stagger(100)}
     ],
     autoplay: false,

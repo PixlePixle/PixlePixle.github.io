@@ -52,8 +52,13 @@ html {
     font-size: 1em;
 }
 
+.buttons {
+    flex-direction: row;
+}
 
 .button {
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: #121212;
     color: #ffffff;
     border: 2px solid;
@@ -146,3 +151,43 @@ position: absolute;
 
 The border-bottom:3vh part is for the TRIANGLE
 */
+
+#socialButtons {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+
+    margin: 10px;
+    display: inline;
+    float: left;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+    background: #171515;
+    color: white;;
+}
+
+.fa-twitter {
+    background: #1DA1F2;
+    color: white;;
+}
+
+.fa-envelope {
+    background: #555b6e;
+    color: white;;
+}
