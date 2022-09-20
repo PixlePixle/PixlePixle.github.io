@@ -1,7 +1,7 @@
 body {
-    background-color: #121212;
-    color: #ffffff;
-    opacity: 86%;
+    background-color: #EEE7DD;
+    color: #271b0d;
+    opacity: 100%;
     margin: 0;
     font-family: 'Poppins';
 }
@@ -30,11 +30,11 @@ html {
 }
 
 .section:nth-child(1) {
-    min-height: 100vh; /* Set to 103vh for triangle */
+    min-height: 103vh; /* Set to 103vh for triangle */
 }
 
 .section:nth-child(2) {
-    background-color: #121212;
+    background-color: #f4e6d3;
 }
 
 .text {
@@ -59,10 +59,9 @@ html {
 .button {
     margin-left: 10px;
     margin-right: 10px;
-    background-color: #121212;
+    background-color: #4A341C;
     color: #ffffff;
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #4CAF50, yellow) 1;
+    border: 2px solid #271b0d;
     padding: 15px 23px;
     text-align: center;
     text-decoration: none;
@@ -72,7 +71,7 @@ html {
 }
 
 .button:hover {
-    background-color: #232323;
+    background-color: #5e4327;
 }
 
 .cards {
@@ -141,7 +140,6 @@ html {
     opacity: 80%;
 }
 
-/* Triangle, uncomment for use
 .section:nth-child(2)::before{
     content: '';
   display: block;
@@ -149,12 +147,10 @@ html {
   height: 0;
 position: absolute;
   bottom: -3vh;
-    border-bottom: 3vh solid #121212; 
+    border-bottom: 3vh solid #f4e6d3; 
   border-right: calc(100vw) solid transparent;
 }
 
-The border-bottom:3vh part is for the TRIANGLE
-*/
 
 #socialButtons {
     list-style: none;
