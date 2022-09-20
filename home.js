@@ -21,3 +21,38 @@ anime({
     duration: 0
 });
 
+var Card = anime({
+    targets: '.card',
+    keyframes: [
+        {opacity: 0},
+        {translateX: '-6', translateY: '0'},
+        {translateX: 0, translateY: 0, opacity: [0,1], duration: 500, easing: "easeInOutSine", delay: anime.stagger(100)}
+    ],
+    autoplay: false,
+    duration: 0
+});
+
+
+
+
+if ('IntersectionObserver' in window) {
+    console.log("Your browser supports IntersectionObserver");
+} else {
+    Cards.play();
+}
+
+const targets = document.querySelectorAll(".card");
+
+const lazyLoad = (target)=>{
+  const io = new IntersectionObserver((entries,observer)=>{
+      entries.forEach(entry=>{
+          if(entry.isIntersecting){
+              Card.play();
+              observer.disconnect();
+          }
+      })
+  },{threshold:[0.7]});
+
+  io.observe(target);
+}
+targets.forEach(lazyLoad);

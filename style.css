@@ -30,7 +30,7 @@ html {
 }
 
 .section:nth-child(1) {
-    min-height: 103vh;
+    min-height: 100vh; /* Set to 103vh for triangle */
 }
 
 .section:nth-child(2) {
@@ -69,25 +69,70 @@ html {
 .cards {
     margin-left: 10vh;
     margin-right: 10vh;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .card {
     justify-content: center;
     align-items: center;
     translate: 0px;
-    height: 240px;
-    width: 185px;
+    min-width: 200px;
+    min-height: 150px;
     border-radius: 4%;
-    background-color: #4CAF50;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://dummyimage.com/200x150.png");
     margin: 10px;
 }
 
-.card:nth-child(n+2):hover {
+.cards p {
+    margin: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 200px;
+    height: 25px;
+    background-color: rgba(33, 36, 43, 0.7);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out 0s;
+    color: #F5F0ED;
+}
+
+.cards a:hover > p {
+    opacity: 1;
+}
+
+.cards #website {
+    background-image: url(websitescreenshot.png);
+}
+
+.cards #minesweeper {
+    background-image: url(minesweeper.png);
+}
+
+@media (max-width: 600px) {
+    .cards p {
+        opacity: 1;
+    }
+    .cards {
+        margin-left: 10vh;
+        margin-right: 10vh;
+        display: flex;
+        flex-wrap: nowrap;   
+        flex-direction: column;
+    }
+    
+}
+
+.card:hover {
     opacity: 80%;
 }
 
+/* Triangle, uncomment for use
 .section:nth-child(2)::before{
     content: '';
   display: block;
@@ -95,6 +140,9 @@ html {
   height: 0;
 position: absolute;
   bottom: -3vh;
-    border-bottom: 3vh solid #121212; /* For the diagonal */
+    border-bottom: 3vh solid #121212; 
   border-right: calc(100vw) solid transparent;
 }
+
+The border-bottom:3vh part is for the TRIANGLE
+*/
