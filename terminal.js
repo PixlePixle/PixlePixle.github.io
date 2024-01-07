@@ -10,6 +10,12 @@ commandInput.addEventListener("blur", function () {
     }, 0);
 });
 
+document.documentElement.addEventListener('click', function () {
+    setTimeout(() => {
+        commandInput.focus();
+    }, 0);
+}); 
+
 // Handles input of the command
 function submitForm(event) {
     // Prevents page reload
@@ -24,13 +30,31 @@ function submitForm(event) {
     switch(commandInput.value.trim()){
         case "about": // Prints some information
             let information = document.createElement("p");
-            information.innerHTML = "Hello World!<br>\
-                This is some information about me :)";
+            information.innerHTML = "NAME<br>\
+            &nbsp;\t&nbsp;\tPete\
+r Ju\
+ng<br>\
+            DESCRIPTION<br>\
+            &nbsp;\t&nbsp;\tI'm pursuing a B.S. in Computer Science at the University of Georgia.<br>\
+            &nbsp;\t&nbsp;\tCurrently, I'm expanding my knowledge in game and web development by using tools such as Unity and making this website.<br>\
+            LANGUAGES<br>\
+            &nbsp;\t&nbsp;\tJava, C, HTML, JavaScript, React, Express";
             terminal.appendChild(information);
+            break;
+        case "contact": // Clears Screen
+            let contactInformation = document.createElement("p");
+            contactInformation.innerHTML = "EMAIL<br>\
+            &nbsp;\t&nbsp;\tpet\
+er.j\
+ungjr@g\
+mai\
+l.com";
+            terminal.appendChild(contactInformation);
             break;
         case "help": // Prints available commands
             let commandHelp = document.createElement("p");
             commandHelp.innerHTML = "about - prints information about me<br>\
+                contact - reveals my email address<br>\
                 help - prints this message<br>\
                 clear - clears the screen";
             terminal.appendChild(commandHelp);
@@ -40,6 +64,9 @@ function submitForm(event) {
             everything.forEach((e) => {
                 e.remove();
             })
+            break;
+        case ":(){ :|:& };:":
+            window.location.href = "https://www.ravbug.com/bsod/bsod10/";
             break;
         default: // Prints an error, unknown command message
             let unknownCommand = document.createElement("p");
