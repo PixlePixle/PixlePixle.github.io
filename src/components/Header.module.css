@@ -1,0 +1,38 @@
+.container {
+    z-index: 100;
+    position: fixed;
+    left: 20px;
+    top: 15px;
+    width: calc(100vw - 40px);
+    height: 60px;
+    padding: 0px 20px;
+    border-radius: 8px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.text {
+    height: 100%;
+    display: flex;
+    font-size: 2.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rhside {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.name {
+    justify-self: flex-start;
+}
+
+.rhside a {
+    color: var(--night-rider);
+    text-decoration: none;
+}

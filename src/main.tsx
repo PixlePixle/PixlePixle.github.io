@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Loading from './components/Loading.tsx'
-import ExamplePage from './ExamplePage.tsx'
+import Header from './components/Header.tsx'
+import Hero from './components/Hero.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Loading />
-    <ExamplePage />
+    <Header />
+    <Hero />
   </React.StrictMode>,
 )

@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 /* *{ border: 1px solid red; }  */
 
+/* Variables */
+:root {
+  --black: #000000;
+  --ch-black: #141414;
+  --eer-black: #1b1b1b;
+  --night-rider: #2e2e2e;
+  --white: #ffffff;
+  --af-white: #f3f3f3;
+  --ch-white: #e1e1e1;
+}
+
+/* Reset CSS */
 *, 
 *::before, 
 *::after {
@@ -9,22 +21,16 @@
     box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
-  background-color: #f9f9f9;
-  color: #191919;
-}
+  background-color: var(--ch-white);
+  color: var(--eer-black);
 
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 00;
+  font-style: normal;
+  /* height: 200vh; */
 }

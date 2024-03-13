@@ -30,11 +30,6 @@
 }
 
 .text {
-    text-align: center;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 00;
-    font-style: normal;
     font-size: x-large;
     background-color: #191919;
     padding: 10px;
