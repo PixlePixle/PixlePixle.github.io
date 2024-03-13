@@ -1,197 +1,82 @@
+/* START OF CSS RESET */
+/* FIND IT HERE: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
 body {
-    background-color: #121212;
-    color: #ffffff;
-    opacity: 86%;
-    margin: 0;
-    font-family: 'Poppins';
-}
-html {   
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    scroll-behavior: smooth;
+  min-height: 100vh;
+  line-height: 1.5;
 }
 
-::-webkit-scrollbar {
-    display: none;
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
 }
 
-.section {
-    margin-bottom: 0;
-    padding: 0;
-    display: flex;
-    line-height: 1.4em;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 100vw;
-    min-height: 100vh;
-
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
 }
 
-.section:nth-child(1) {
-    min-height: 100vh; /* Set to 103vh for triangle */
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
-.section:nth-child(2) {
-    background-color: #121212;
-}
-
-.text {
-    margin-top: 0;
-    padding-top: 0;
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-.text h1 {
-    font-size: 2em;
-}
-
-.text p {
-    font-size: 1em;
-}
-
-.buttons {
-    flex-direction: row;
-}
-
-.button {
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #121212;
-    color: #ffffff;
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #4CAF50, yellow) 1;
-    padding: 15px 23px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    border-radius: 7px;
-}
-
-.button:hover {
-    background-color: #232323;
-}
-
-.cards {
-    margin-left: 10vh;
-    margin-right: 10vh;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-
-.card {
-    justify-content: center;
-    align-items: center;
-    translate: 0px;
-    min-width: 200px;
-    min-height: 150px;
-    border-radius: 4%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("https://dummyimage.com/200x150.png");
-    margin: 10px;
-}
-
-.cards p {
-    margin: 0;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 200px;
-    height: 25px;
-    background-color: rgba(33, 36, 43, 0.7);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out 0s;
-    color: #F5F0ED;
-}
-
-.cards a:hover > p {
-    opacity: 1;
-}
-
-.cards #website {
-    background-image: url(websitescreenshot.png);
-}
-
-.cards #minesweeper {
-    background-image: url(minesweeper.png);
-}
-
-@media (max-width: 600px) {
-    .cards p {
-        opacity: 1;
-    }
-    .cards {
-        margin-left: 10vh;
-        margin-right: 10vh;
-        display: flex;
-        flex-wrap: nowrap;   
-        flex-direction: column;
-    }
-    
-}
-
-.card:hover {
-    opacity: 80%;
-}
-
-/* Triangle, uncomment for use
-.section:nth-child(2)::before{
-    content: '';
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
   display: block;
-  width: 0;
-  height: 0;
-position: absolute;
-  bottom: -3vh;
-    border-bottom: 3vh solid #121212; 
-  border-right: calc(100vw) solid transparent;
 }
 
-The border-bottom:3vh part is for the TRIANGLE
-*/
-
-#socialButtons {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
 }
 
-.fa {
-    padding: 5px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-
-    margin: 10px;
-    display: inline;
-    float: left;
-
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
 }
 
-.fa:hover {
-    opacity: 0.7;
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
 }
+/* END OF CSS RESET */
 
-.fa-github {
-    background: #171515;
-    color: white;;
-}
-
-.fa-twitter {
-    background: #1DA1F2;
-    color: white;;
-}
-
-.fa-envelope {
-    background: #555b6e;
-    color: white;;
+body {
+    background-color: #FEFEFE;
+opacity: 0.7;
+background-image:  linear-gradient(#85beff 1.6px, transparent 1.6px), linear-gradient(to right, #85beff 1.6px, #FEFEFE 1.6px);
+background-size: 32px 32px;
 }
