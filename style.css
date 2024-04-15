@@ -119,9 +119,19 @@ html {
     background-image: url(websitescreenshot.png);
 }
 
+.cards #superFriends {
+    background-image: url(superfriends.jpg);
+}
+
+.cards #byteUniversity {
+    background-image: url(byteUniversity.png);
+}
+
 .cards #minesweeper {
     background-image: url(minesweeper.png);
 }
+
+
 
 @media (max-width: 600px) {
     .cards p {
