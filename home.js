@@ -1,59 +1,55 @@
-import anime from './js/lib/anime.es.js';
-
-anime({
-    targets: '.text',
-    keyframes: [
-        {opacity: [0, 0.86], duration: 750, easing: 'linear'},
-        {translateY: '-7vh', delay: 50}
-    ],    
-    duration: 1000,
-    easing: 'easeInOutCubic'
-});
-
-anime({
-    targets: '.button',
-    keyframes: [
-        {opacity: 0},
-        {translateY: '-7vh', translateX: '-5vw'},
-        {translateX: 0, opacity: [0,0.86], duration: 1250, delay: 1250}
-
-    ],
-    delay: anime.stagger(50),
-    duration: 0
-});
-
-var Card = anime({
-    targets: '.card',
-    keyframes: [
-        {opacity: 0},
-        {translateX: '0', translateY: '8'},
-        {translateX: 0, translateY: 0, opacity: [0,1], duration: 500, easing: "easeInOutSine", delay: anime.stagger(100)}
-    ],
-    autoplay: false,
-    duration: 0
-});
+const wheel = [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "_", "+", ",", ".", "/", "<", ">", "?"]
+const rows = 7
+const columns = 18
+let cellsText = []
+let message = "                   Peter Jung        Developer                           Projects          Contact Me                         "
 
 
-
-
-if ('IntersectionObserver' in window) {
-    console.log("Your browser supports IntersectionObserver");
-} else {
-    Cards.play();
+function fillBoard() {
+    let board = document.getElementById("board");
+    board.style.setProperty('--grid-rows', rows);
+    board.style.setProperty('--grid-cols', columns);
+    for(let i = 0; i < (rows * columns); i++) {
+        let cell = document.createElement("div");
+        let text = document.createElement('p');
+        text.innerText = wheel[0]
+        // text.innerText = wheel[Math.floor(Math.random() * wheel.length)]
+        cellsText.push(text);
+        cell.appendChild(text);
+        board.appendChild(cell).className = 'card test';
+    }
 }
 
-const targets = document.querySelectorAll(".card");
+fillBoard();
 
-const lazyLoad = (target)=>{
-  const io = new IntersectionObserver((entries,observer)=>{
-      entries.forEach(entry=>{
-          if(entry.isIntersecting){
-              Card.play();
-              observer.disconnect();
-          }
-      })
-  },{threshold:[0.7]});
+function displayMessage() {
+    let count = 1;
+    let offset = 0;
+    let endset = 0;
+    function cycle() {
+        for(let i = offset; i < endset; i++) {
+            let cell = cellsText[i];
+            cell.innerText = wheel[(i + count) % wheel.length]
+        }
+        count++;
+        if(endset < (rows * columns))
+            endset++; // Makes the effect snake out
+    }
+    let cycleCycle = setInterval(cycle, 25); // Cycles the random characters
 
-  io.observe(target);
+    setTimeout(() => {
+        let messageLoop = setInterval(() => {
+            offset++; // Snakes the starting point of the random character cycler up
+            if(offset == rows * columns) {
+                clearInterval(cycleCycle);
+                clearInterval(messageLoop);
+            } // Once we gone through them all, stop both loops
+            
+            // Place the message into the cells
+            cellsText[offset-1].innerText = message.substring(offset-1,offset)
+        },25) // How fast it should go along.
+    }, 700) // Delay before it stars
 }
-targets.forEach(lazyLoad);
+
+setTimeout(displayMessage, 350);
+
