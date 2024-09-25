@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Rosarivo:ital@0;1&display=swap');
+.rosarivo-regular {
+  font-family: "Rosarivo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.rosarivo-regular-italic {
+  font-family: "Rosarivo", cursive;
+  font-weight: 400;
+  font-style: italic;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.beiruti-regular {
+  font-family: "Beiruti", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*  */
+
+#wallpaper {
+  z-index: -100;
+  position: absolute;
+  background-color: #3e3e44;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/IMG_1569.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blur{
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(8px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 7vh;
+  color: #F5f5f7;
+  background-color: #d7d2cb5b;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+#content {
+  color: #F5f5f7;
+  height: 93vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
