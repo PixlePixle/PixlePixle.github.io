@@ -1,3 +1,9 @@
+/* Colors */
+:root {
+  --accent-color: #b74b4b;
+  --bg-color: #191919;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
